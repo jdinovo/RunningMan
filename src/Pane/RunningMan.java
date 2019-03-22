@@ -159,6 +159,7 @@ public class RunningMan extends Pane {
 				confirmQuit.setHeight(300);
 				confirmQuit.setAlwaysOnTop(true);
 				confirmQuit.setResizable(false);
+				confirmQuit.initStyle(StageStyle.UNDECORATED);
 				
 				//Stops the missiles from continuing
 					obj.getBlocks().stop();
@@ -242,7 +243,7 @@ public class RunningMan extends Pane {
 	 */
 	public static void userSave(Player p) {
 		ArrayList<Player> players;
-		File file = new File("RunningManSave.txt");
+		File file = new File("RunningManSave.dat");
 		Boolean sameScore = false;
 		
 		if(file.exists()) {
@@ -296,7 +297,7 @@ public class RunningMan extends Pane {
 	 */
 	public static ArrayList<Player> userLoad(){
 		ArrayList<Player> players = new ArrayList<>(10);
-		File file = new File("RunningManSave.txt");
+		File file = new File("RunningManSave.dat");
 		Player temp;
 		
 		//if no file create one and write a blank array to it 
