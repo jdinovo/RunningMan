@@ -1,6 +1,11 @@
 package Objects;
 
 import java.io.File;
+import java.io.InputStream;
+import java.net.URL;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
@@ -18,10 +23,12 @@ public class Audio extends Pane {
 	 */
 
 	//Files - one for each sound effect
-	File theSong = new File("src/Audio/Heroic_Demise.mp3");
-	File theJump = new File("src/Audio/jump1.mp3");
-	File theDuck = new File("src/Audio/duck1.mp3");
-	File gotHit = new File("src/Audio/gotHit.mp3");
+	 //new File("src/Audio/Heroic_Demise.mp3");
+	
+	 URL theSong = getClass().getResource("/Audio/Heroic_Demise.mp3");
+	URL theJump = getClass().getResource("/Audio/jump1.mp3");
+	URL theDuck = getClass().getResource("/Audio/duck1.mp3");
+	URL gotHit = getClass().getResource("/Audio/gotHit.mp3");
 	
 	//Publicly declare the media and media player
 	public static Media media;
@@ -29,35 +36,41 @@ public class Audio extends Pane {
 	
 	// METHODS //
 	public void themeSong() {
-		
-		// Play the theme song
-		media = new Media(new File(theSong.toString()).toURI().toString());
-		player = new MediaPlayer(media);
-		player.play();
-		player.setAutoPlay(true);
+			// Play the theme song
+			media = new Media(theSong.toString());
 			
-		}
+			player = new MediaPlayer(media);
+			player.play();
+			player.setAutoPlay(true);
+
+	}
 	
 	public void jumpEffect() {
-		//Play the jump sound whenever character jumps
-		media = new Media(new File(theJump.toString()).toURI().toString());
-		player = new MediaPlayer(media);
-		player.play();
+
+			//Play the jump sound whenever character jumps
+			media = new Media(theJump.toString());
+			player = new MediaPlayer(media);
+			player.play();
+
 	}
 	
 	public void duckEffect() {
-		//Play the duck whenever character ducks
-		media = new Media(new File(theDuck.toString()).toURI().toString());
-		player = new MediaPlayer(media);
-		player.play();
+
+			//Play the duck whenever character ducks
+			media = new Media(theDuck.toString());
+			player = new MediaPlayer(media);
+			player.play();
+
 	}
 	
 	public void hitEffect() {
-		// Play the get hit sound when hit by missile
-		media = new Media(new File(gotHit.toString()).toURI().toString());
-		player = new MediaPlayer(media);
-		player.play();
+
+			// Play the get hit sound when hit by missile
+			media = new Media((gotHit.toString()));
+			player = new MediaPlayer(media);
+			player.play();
+
 	}
 	
-	}
+}
 
