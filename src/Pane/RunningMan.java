@@ -152,8 +152,8 @@ public class RunningMan extends Pane {
 	    			
 				//Create a new popup prompt to confirm if user wants to leave game
 				Stage confirmQuit = new Stage();
+				confirmQuit.initStyle(StageStyle.UNDECORATED);
 				confirmQuit.initOwner(MainMenu.window);
-				confirmQuit.initStyle(StageStyle.UTILITY);
 				confirmQuit.initModality(Modality.APPLICATION_MODAL);
 				confirmQuit.setWidth(400);
 				confirmQuit.setHeight(300);

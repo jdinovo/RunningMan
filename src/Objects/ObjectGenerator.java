@@ -42,7 +42,7 @@ public class ObjectGenerator extends Pane {
 		private ArrayList<ImageView> recs = new ArrayList<>();
 		private Random r = new Random();
 		private int i = 0;
-		private int speedIncrementer = 50;
+		private int speedIncrementer = 100;
 		
 		private CollisionDetection collision = new CollisionDetection();
 		private Character player = new Character();
